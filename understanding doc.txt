@@ -1,0 +1,858 @@
+First we want to know the release plan then we will statr the development.
+This particular release moving the no.of change/enhancements.
+
+GIT branch is essentially an independent line of development.You can take advantage of branching when working on new new features og bug fixes becuase its isolate your work from that of other team members.
+
+VCS is a process of tracking and controlling changes in the software/product/projet.It could be a programe/script file.
+The golas of VCS generally
+Teamwork
+Defect tracking
+Configuration auditing
+process management
+
+Master brabch will have the final version of the code.
+
+Pull request
+=============
+Pull requests let you tell others about changes you've pushed to a GitHub repository. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
+
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ ls -ltr
+total 5
+-rw-r--r-- 1 welcome 197121  14 Jul 25 16:26 merges1.txt
+-rw-r--r-- 1 welcome 197121  11 Jul 25 16:26 text1.txt
+-rw-r--r-- 1 welcome 197121  91 Jul 25 16:31 btest1.txt
+-rw-r--r-- 1 welcome 197121  23 Jul 25 16:31 btest25july.txt
+-rw-r--r-- 1 welcome 197121 139 Jul 25 16:32 text.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ vi text.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ git add .
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ git commit -m "resolve conflicts"
+[master 5f4c896] resolve conflicts
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git checkout branch1
+Switched to branch 'branch1'
+Your branch is ahead of 'link1/branch1' by 1 commit.
+  (use "git push" to publish your local commits)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git tag v1.0
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121 23 Jul 25 16:31 btest25july.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 25 16:45 btest1.txt
+-rw-r--r-- 1 welcome 197121 77 Jul 25 16:45 text.txt
+-rw-r--r-- 1 welcome 197121  4 Jul 25 16:45 text1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ vi text1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121 23 Jul 25 16:31 btest25july.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 25 16:45 btest1.txt
+-rw-r--r-- 1 welcome 197121 77 Jul 25 16:45 text.txt
+-rw-r--r-- 1 welcome 197121 11 Jul 25 16:46 text1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git add .
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git commit -m "release verion is v1.0"
+[branch1 fe65f48] release verion is v1.0
+ 1 file changed, 1 insertion(+)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git log --oneline
+fe65f48 (HEAD -> branch1) release verion is v1.0
+6b2b0cf (tag: v1.0) text file 2nd time commited
+baa7e01 (link1/branch1) 26thjuly first commit
+f453d20 branch first commit
+4107ca2 fourth change
+3864553 Update text.txt
+e703f49 File Text.txt commited
+48f9d6e first commit
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git push -u link1 v1.0
+Logon failed, use ctrl+c to cancel basic credential prompt.
+Username for 'https://github.com': seshu.a95@gmail.com
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 322 bytes | 32.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/oragithub/test.git
+ * [new tag]         v1.0 -> v1.0
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121 23 Jul 25 16:31 btest25july.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 25 16:45 btest1.txt
+-rw-r--r-- 1 welcome 197121 77 Jul 25 16:45 text.txt
+-rw-r--r-- 1 welcome 197121 11 Jul 25 16:46 text1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ cat text.txt
+Hello Chan
+Kavali DON
+PK FAN
+amir FAN
+salman FAN
+brachone adding today
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ cat text1.txt
+HI
+hello
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121 23 Jul 25 16:31 btest25july.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 25 16:45 btest1.txt
+-rw-r--r-- 1 welcome 197121 77 Jul 25 16:45 text.txt
+-rw-r--r-- 1 welcome 197121 11 Jul 25 16:46 text1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ vi stashex.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git checkout branch2
+Switched to branch 'branch2'
+Your branch is ahead of 'link1/branch2' by 3 commits.
+  (use "git push" to publish your local commits)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ git checkout branch1
+Switched to branch 'branch1'
+Your branch is ahead of 'link1/branch1' by 2 commits.
+  (use "git push" to publish your local commits)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git add .
+warning: LF will be replaced by CRLF in stashex.txt.
+The file will have its original line endings in your working directory
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git checkout branch2
+Switched to branch 'branch2'
+A       stashex.txt
+Your branch is ahead of 'link1/branch2' by 3 commits.
+  (use "git push" to publish your local commits)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ git stash
+Saved working directory and index state WIP on branch2: 362529c text commit
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ git stash pop
+On branch branch2
+Your branch is ahead of 'link1/branch2' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   stashex.txt
+
+Dropped refs/stash@{0} (6a9b250ae5efabcb327402cae13785f3a2c0293f)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$
+
+
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ ls -ltr
+total 3
+-rw-r--r-- 1 welcome 197121  3 Jul 24 15:53 text1.txt
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 24 17:40 btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git branch --list
+  branch1
+* master
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git remote -v
+link1   https://github.com/oragithub/test.git (fetch)
+link1   https://github.com/oragithub/test.git (push)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git branch --list
+  branch1
+* master
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git checkout branch1
+Switched to branch 'branch1'
+Your branch is based on 'link1/branch1', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ ls -ltr
+total 3
+-rw-r--r-- 1 welcome 197121  3 Jul 24 15:53 text1.txt
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 24 17:40 btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git chekout master
+git: 'chekout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'link1/master'.
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ ls -ltr
+total 3
+-rw-r--r-- 1 welcome 197121  3 Jul 24 15:53 text1.txt
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 24 17:40 btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git checkout branch1
+Switched to branch 'branch1'
+Your branch is based on 'link1/branch1', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ vi btest25july.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121  3 Jul 24 15:53 text1.txt
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 24 17:40 btest1.txt
+-rw-r--r-- 1 welcome 197121 22 Jul 25 15:36 btest25july.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'link1/master'.
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121  3 Jul 24 15:53 text1.txt
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 24 17:40 btest1.txt
+-rw-r--r-- 1 welcome 197121 22 Jul 25 15:36 btest25july.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git checkout branch1
+Switched to branch 'branch1'
+Your branch is based on 'link1/branch1', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git add .
+warning: LF will be replaced by CRLF in btest25july.txt.
+The file will have its original line endings in your working directory
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git commit -m "26thjuly first commit"
+[branch1 baa7e01] 26thjuly first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 btest25july.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121  3 Jul 24 15:53 text1.txt
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 24 17:40 btest1.txt
+-rw-r--r-- 1 welcome 197121 22 Jul 25 15:36 btest25july.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'link1/master'.
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ ls -ltr
+total 3
+-rw-r--r-- 1 welcome 197121  3 Jul 24 15:53 text1.txt
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 24 17:40 btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git checkout branch1
+Switched to branch 'branch1'
+Your branch is based on 'link1/branch1', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git push -u link1 branch1
+Logon failed, use ctrl+c to cancel basic credential prompt.
+Username for 'https://github.com': seshu.a95@gmail.com
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (18/18), 2.27 KiB | 72.00 KiB/s, done.
+Total 18 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+remote:
+remote: Create a pull request for 'branch1' on GitHub by visiting:
+remote:      https://github.com/oragithub/test/pull/new/branch1
+remote:
+To https://github.com/oragithub/test.git
+ * [new branch]      branch1 -> branch1
+Branch 'branch1' set up to track remote branch 'branch1' from 'link1'.
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git pull
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/oragithub/test
+ * [new branch]      branch2    -> link1/branch2
+   f453d20..bb18108  master     -> link1/master
+Already up to date.
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git brach -a
+git: 'brach' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git branch -a
+* branch1
+  master
+  remotes/link1/branch1
+  remotes/link1/branch2
+  remotes/link1/master
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is behind 'link1/master' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ ls -ltr
+total 3
+-rw-r--r-- 1 welcome 197121  3 Jul 24 15:53 text1.txt
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 24 17:40 btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git checkout branch2
+Switched to a new branch 'branch2'
+Branch 'branch2' set up to track remote branch 'branch2' from 'link1'.
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ ls -ltr
+total 3
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 24 17:40 btest1.txt
+-rw-r--r-- 1 welcome 197121 11 Jul 25 16:05 text1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ vi merges1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ git add .
+warning: LF will be replaced by CRLF in merges1.txt.
+The file will have its original line endings in your working directory
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ git commit -m "branch2 file merging into master
+> "
+[branch2 2bc3d11] branch2 file merging into master
+ 1 file changed, 1 insertion(+)
+ create mode 100644 merges1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 24 17:40 btest1.txt
+-rw-r--r-- 1 welcome 197121 11 Jul 25 16:05 text1.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 25 16:06 merges1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is behind 'link1/master' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ ls
+btest1.txt  text.txt  text1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ ls -ltr
+total 3
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 24 17:40 btest1.txt
+-rw-r--r-- 1 welcome 197121  4 Jul 25 16:07 text1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git merge branch2
+Updating f453d20..2bc3d11
+Fast-forward
+ merges1.txt | 1 +
+ text1.txt   | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 merges1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 24 17:40 btest1.txt
+-rw-r--r-- 1 welcome 197121 14 Jul 25 16:08 merges1.txt
+-rw-r--r-- 1 welcome 197121 11 Jul 25 16:08 text1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ vi btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git add .
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git commit -m "someone updated code pushed into master branch"
+[master a13b629] someone updated code pushed into master branch
+ 1 file changed, 1 insertion(+)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 14 Jul 25 16:08 merges1.txt
+-rw-r--r-- 1 welcome 197121 11 Jul 25 16:08 text1.txt
+-rw-r--r-- 1 welcome 197121 64 Jul 25 16:10 btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git checkout branch2
+Switched to branch 'branch2'
+Your branch is ahead of 'link1/branch2' by 1 commit.
+  (use "git push" to publish your local commits)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 14 Jul 25 16:08 merges1.txt
+-rw-r--r-- 1 welcome 197121 11 Jul 25 16:08 text1.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 25 16:12 btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ cat btest1.txt
+branch file
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'link1/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ cat btest1.txt
+branch file
+adding someone merge this file into master branch
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ vi btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 14 Jul 25 16:08 merges1.txt
+-rw-r--r-- 1 welcome 197121 11 Jul 25 16:08 text1.txt
+-rw-r--r-- 1 welcome 197121 99 Jul 25 16:13 btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ vi btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git che
+checkout      cherry        cherry-pick
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git checkout branch2
+error: Your local changes to the following files would be overwritten by checkout:
+        btest1.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git add .
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git commit -m "no changes"
+[master 98efbd8] no changes
+ 1 file changed, 1 insertion(+)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git checkout branch2
+Switched to branch 'branch2'
+Your branch is ahead of 'link1/branch2' by 1 commit.
+  (use "git push" to publish your local commits)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 14 Jul 25 16:08 merges1.txt
+-rw-r--r-- 1 welcome 197121 11 Jul 25 16:08 text1.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 25 16:16 btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ cat btest1.txt
+branch file
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ vi btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        btest1.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ git add .
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ git commit -m "branch2 btest1 file modified"
+[branch2 24e24a6] branch2 btest1 file modified
+ 1 file changed, 1 insertion(+)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'link1/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git merge branch2
+Auto-merging btest1.txt
+CONFLICT (content): Merge conflict in btest1.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121  56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121  14 Jul 25 16:08 merges1.txt
+-rw-r--r-- 1 welcome 197121  11 Jul 25 16:08 text1.txt
+-rw-r--r-- 1 welcome 197121 133 Jul 25 16:18 btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ vi btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ git merge master
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ git add .
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ git merge branch2
+fatal: You have not concluded your merge (MERGE_HEAD exists).
+Please, commit your changes before you merge.
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 14 Jul 25 16:08 merges1.txt
+-rw-r--r-- 1 welcome 197121 11 Jul 25 16:08 text1.txt
+-rw-r--r-- 1 welcome 197121 93 Jul 25 16:20 btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ vi btest1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ git add .
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ git commit -m "remove the conflicts"
+[master 6c8d75b] remove the conflicts
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ cat btest1.txt
+branch file
+adding someone merge this file into master branch
+branch2 file modification
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git checkout branch1
+Switched to branch 'branch1'
+Your branch is up to date with 'link1/branch1'.
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121 56 Jul 24 16:41 text.txt
+-rw-r--r-- 1 welcome 197121 13 Jul 25 16:24 btest1.txt
+-rw-r--r-- 1 welcome 197121 23 Jul 25 16:24 btest25july.txt
+-rw-r--r-- 1 welcome 197121  4 Jul 25 16:24 text1.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ vi text.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git add .
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git commit -m "text file 2nd time commited"
+[branch1 6b2b0cf] text file 2nd time commited
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'link1/master' by 5 commits.
+  (use "git push" to publish your local commits)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git merge branch1
+Merge made by the 'recursive' strategy.
+ btest25july.txt | 1 +
+ text.txt        | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 btest25july.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ ls -ltr
+total 5
+-rw-r--r-- 1 welcome 197121 91 Jul 25 16:26 btest1.txt
+-rw-r--r-- 1 welcome 197121 14 Jul 25 16:26 merges1.txt
+-rw-r--r-- 1 welcome 197121 11 Jul 25 16:26 text1.txt
+-rw-r--r-- 1 welcome 197121 23 Jul 25 16:26 btest25july.txt
+-rw-r--r-- 1 welcome 197121 77 Jul 25 16:26 text.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git checkout branch2
+Switched to branch 'branch2'
+Your branch is ahead of 'link1/branch2' by 2 commits.
+  (use "git push" to publish your local commits)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ ls -ltr
+total 4
+-rw-r--r-- 1 welcome 197121 14 Jul 25 16:26 merges1.txt
+-rw-r--r-- 1 welcome 197121 11 Jul 25 16:26 text1.txt
+-rw-r--r-- 1 welcome 197121 40 Jul 25 16:28 btest1.txt
+-rw-r--r-- 1 welcome 197121 56 Jul 25 16:28 text.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ vi text.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ vi text.txt
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ git add .
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ git commit -m "text commit"
+[branch2 362529c] text commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (branch2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'link1/master' by 8 commits.
+  (use "git push" to publish your local commits)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git merge branch1
+Already up to date.
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master)
+$ git merge branch2
+Auto-merging text.txt
+CONFLICT (content): Merge conflict in text.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ git log --stat
+commit 659f99eccdd4505a12b247eff84aaeded4e7efb2 (HEAD -> master)
+Merge: 6c8d75b 6b2b0cf
+Author: seshu <seshu.a95@gmail.com>
+Date:   Sun Jul 25 16:26:52 2021 +0530
+
+     merge required
+
+commit 6b2b0cfabc5357173215e2dd43b12c517187c70a (branch1)
+Author: seshu <seshu.a95@gmail.com>
+Date:   Sun Jul 25 16:26:03 2021 +0530
+
+    text file 2nd time commited
+
+ text.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6c8d75b383cca4cf0b56e61f3dcb580185c4cd68
+Merge: 98efbd8 24e24a6
+Author: seshu <seshu.a95@gmail.com>
+Date:   Sun Jul 25 16:22:21 2021 +0530
+
+    remove the conflicts
+
+commit 24e24a67700b65a9c7717e2346c3c2f102f5b2bf
+Author: seshu <seshu.a95@gmail.com>
+Date:   Sun Jul 25 16:18:11 2021 +0530
+
+    branch2 btest1 file modified
+
+ btest1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 98efbd8c506f718c26b60a29e369251f5e780770
+Author: seshu <seshu.a95@gmail.com>
+Date:   Sun Jul 25 16:15:25 2021 +0530
+
+    no changes
+
+ btest1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit a13b629171210e3d5b40f19e7481fbee710c844e
+Author: seshu <seshu.a95@gmail.com>
+Date:   Sun Jul 25 16:11:33 2021 +0530
+
+    someone updated code pushed into master branch
+
+ btest1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 2bc3d116554f7f56ff7f7e8cc405505ed4b81a9c
+Author: seshu <seshu.a95@gmail.com>
+Date:   Sun Jul 25 16:06:59 2021 +0530
+
+    branch2 file merging into master
+
+ merges1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit baa7e018bdae3701f664581dda51d11b48923a38 (link1/branch1)
+Author: seshu <seshu.a95@gmail.com>
+Date:   Sun Jul 25 15:39:52 2021 +0530
+
+    26thjuly first commit
+
+ btest25july.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit bb18108a530e4c108c73970f73413338bae54a01 (link1/master, link1/branch2)
+Merge: f453d20 55db765
+Author: oragithub <48126329+oragithub@users.noreply.github.com>
+Date:   Sun Jul 25 11:50:33 2021 +0530
+
+    Merge pull request #1 from oragithub/branch1
+
+    Update text1.txt
+
+commit 55db76538244751524bd0a98afa8a236571f3695
+Author: oragithub <48126329+oragithub@users.noreply.github.com>
+Date:   Sun Jul 25 11:49:02 2021 +0530
+
+    Update text1.txt
+
+ text1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit f453d203d7ecfa587c29919d27df729bc6565810
+Author: seshu <seshu.a95@gmail.com>
+Date:   Sat Jul 24 17:38:54 2021 +0530
+
+    branch first commit
+
+ btest1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 4107ca24b80f13e83e8f96b2bae694fd602ed47f
+Author: oragithub <48126329+oragithub@users.noreply.github.com>
+Date:   Sat Jul 24 16:38:56 2021 +0530
+
+    fourth change
+
+ text.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 38645532d3bd5a180a3452e3ed5b8dbe28e9ce9b
+Author: oragithub <48126329+oragithub@users.noreply.github.com>
+Date:   Sat Jul 24 16:37:42 2021 +0530
+
+    Update text.txt
+
+ text.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e703f49707029c602914f2044c7c02ef02714824
+Author: seshu <seshu.a95@gmail.com>
+Date:   Sat Jul 24 16:29:22 2021 +0530
+
+    File Text.txt commited
+
+ text.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 48f9d6e2e6319f92d794814cdc93c5195a7ff007
+Author: seshu <seshu.a95@gmail.com>
+Date:   Sat Jul 24 15:56:59 2021 +0530
+
+    first commit
+
+ text1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ ^C
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ ^C
+
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ ^C
+
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$ bash: ooogfdzccfccfhdfsdsdffhjdddffdddaweewaawaaaeaaeaahjbhj: command not found
+
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$
+welcome@DESKTOP-S5Q89DP MINGW64 ~/Desktop/awss/ppppp (master|MERGING)
+$
